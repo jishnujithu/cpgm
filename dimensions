@@ -1,0 +1,21 @@
+def breakdown(amt,denominations):
+    dict = {}
+    print(amt)
+    print(denominations)
+    for keys in denominations:
+        if(amt>=keys):
+            if(denominations[keys]>0):
+                a = int(amt / keys)
+                print("a",a)
+                print(keys)
+                denominations[keys] = denominations[keys] - a
+                b  = int(amt % keys)
+                print("b",b)
+                dict[keys]=a
+                amt = amt-a*keys
+                # amt = b
+                #a
+                #b
+    print(denominations)
+    print(dict)
+breakdown(1256,{2000:10,500:100,100:10,50:0,20:10,10:5,5:10,2:10,1:10})
